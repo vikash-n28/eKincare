@@ -1,0 +1,258 @@
+/*Global formate*/
+* { box-sizing:border-box; }
+
+html,body {
+
+    font-family: Helvetica;
+    background: #B1B7B9;
+    height:100%;
+    top:0;
+    top:0; left:0;
+    z-index:-1;
+    webkit-font-smoothing: antialiased;
+}
+
+/********************
+ *   LOGIN PAGE     *
+ ********************/
+
+/*Login Card*/
+.login {
+    width: 380px;
+    height: 310px;
+    margin: 40px auto;
+    padding: 1em 2em 2em 2em;
+    background: #fafafa;
+    border-radius: 7px;
+    border: 1px solid #ebebeb;
+    box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09804) 0px 1px 2px 0px;
+}
+
+/*Invalid Text*/
+.text-danger {
+    margin-top: 15px;
+    color:red;
+    font-size:12px;
+    margin-left: 80px;
+}
+
+md-input-container.md-custom,
+md-input-container input{
+    width:304px;
+}
+/*Brand Logo*/
+
+centre {
+    position: relative;
+    left: 31%;
+}
+
+@media only screen and (max-width: 800px) {
+    centre {
+        position: relative;
+        left: 19%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/*Login Button*/
+button {
+    padding: 8px 40px;
+    border-radius: 5px;
+    background-color: #384EA4;
+    border-style: inherit;
+    font-size: 20px;
+    color:#FFFFFF;
+}
+
+/*forgot password*/
+.forgot a:active,
+.forgot a:focus{
+    text-decoration: none;
+}
+
+.forgot {
+    position: relative;
+
+}
+
+/********************
+ *     NAV BAR      *
+ ********************/
+.navbar-brand>img {
+    display : block;
+    width : 120px;
+}
+
+.navbar-custom {
+    background-color:#177bbb;
+    border-radius:0;
+}
+
+.navbar-custom .navbar-nav>li>a {
+    color: #fff !important;
+}
+
+/********************
+ *     SIDE BAR     *
+ ********************/
+
+#wrapper {
+    padding-left: 0;
+    margin-top: 51px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #fff;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    background: #b8daef;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************
+ *     LOADER      *
+ ********************/
+
+/*.progressCirculardemoBasicUsage body {*/
+    /*padding: 20px; }*/
+
+/*.progressCirculardemoBasicUsage h4 {*/
+    /*margin: 10px 0; }*/
+
+/*.progressCirculardemoBasicUsage md-progress-circular {*/
+    /*margin-bottom: 20px; }*/
+
+/*.progressCirculardemoBasicUsage #loaders > md-switch {*/
+    /*margin: 0;*/
+    /*margin-left: 10px;*/
+    /*margin-top: -10px; }*/
+
+/*.progressCirculardemoBasicUsage #loaders > h5 {*/
+    /*margin-top: 0; }*/
+
+/*.progressCirculardemoBasicUsage #loaders > p {*/
+    /*margin-right: 20px;*/
+    /*margin-bottom: 24px; }*/
+
+/*.progressCirculardemoBasicUsage p.small {*/
+    /*font-size: 0.8em;*/
+    /*margin-top: -18px; }*/
+
+/*.progressCirculardemoBasicUsage hr {*/
+    /*width: 100%;*/
+    /*margin-top: 20px;*/
+    /*border-color: rgba(221, 221, 177, 0.1); }*/
+
+/*.progressCirculardemoBasicUsage p.small > code {*/
+    /*font-size: 0.8em; }*/
+
+/*.progressCirculardemoBasicUsage .visible {*/
+    /*border-color: rgba(221, 221, 177, 0); }*/
+
+
+
+
