@@ -1,4 +1,4 @@
-var app = angular.module('myAPp',['ui.router','ngMaterial','ngAnimate','ngAria','ngMessages','satellizer']);
+var app = angular.module('myAPp',['ui.router','ngMaterial','ngAnimate','ngAria','ngMessages','satellizer','ui.rCalendar']);
 app.config(['$stateProvider','$urlRouterProvider' ,'$httpProvider','$authProvider',function ($stateProvider,$urlRouterProvider ,$httpProvider,$authProvider) {
 
     /**
@@ -38,29 +38,38 @@ app.config(['$stateProvider','$urlRouterProvider' ,'$httpProvider','$authProvide
     $stateProvider
         .state('home', {
             url: '/home',
-            templateUrl: 'templates/home.html',
+            templateUrl: 'template/home.html',
             controller:'navCtrl',
             resolve: {
                 loginRequired: loginRequired
             }
         })
-        .state('home.calender', {
+        .state('calendar', {
             url: '/calendar',
-            templateUrl: 'templates/calender.html',
-            controller:'navCtrl'
+            templateUrl:'template/calendar.html',
+            controller:'calendarCtrl',
+            resolve: {
+                skipIfLoggedIn: skipIfLoggedIn
+            }
         })
         .state('login', {
             url: '/login',
-            templateUrl: 'templates/login.html',
+            templateUrl: 'template/login.html',
             controller: 'loginCtrl',
             resolve: {
                 skipIfLoggedIn: skipIfLoggedIn
             }
         })
 
+        .state('forgot', {
+          url: '/forgot',
+          templateUrl: 'template/forgot.html',
+          conroller: null,
+        })
+
         // .state('signup', {
         //     url: '/signup',
-        //     templateUrl: 'templates/signup.html',
+        //     templateUrl: 'template/signup.html',
         //     controller: 'SignupCtrl',
         //     resolve: {
         //         skipIfLoggedIn: skipIfLoggedIn
@@ -73,7 +82,7 @@ app.config(['$stateProvider','$urlRouterProvider' ,'$httpProvider','$authProvide
         })
         // .state('profile', {
         //     url: '/profile',
-        //     templateUrl: 'templates/profile.html',
+        //     templateUrl: 'template/profile.html',
         //     controller: 'ProfileCtrl',
         //     resolve: {
         //         loginRequired: loginRequired

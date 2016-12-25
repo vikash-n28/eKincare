@@ -1,0 +1,40 @@
+
+<!--Nav Bar-->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img alt="eKincare" class="img-responsive" src="https://d3vimd0j9wrtcm.cloudfront.net/assets/logo-3163b2469af775c9baba0cfe49eabab300b4e599a445730502ff6ea0b2755d1e.png" /></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-if="isAuthenticated()"><a ui-sref="calendar">Calender</a></li>
+                <li ng-if="isAuthenticated()"><a ui-sref="#">Content</a></li>
+                <li ng-if="isAuthenticated()"><a ui-sref="logout"><span class="glyphicon glyphicon-user"></span>Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--Side Bar-->
+<div id="wrapper">
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Dashboard</b></a></li>
+            <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Customers</b></a></li>
+            <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Appointments</b></a></li>
+            <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Enterprises</b></a></li>
+            <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Partners</b></a></li>
+            <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Promotions</b></a></li>
+            <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Corporates</b></a></li>
+            <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Staff</b></a></li>
+        </ul>
+    </div>
+</div>
+
+<!--Display Content part-->
+<div ui-view></div>

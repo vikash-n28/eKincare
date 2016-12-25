@@ -1,110 +1,68 @@
-/**
- * Created by bridgeit on 22/12/16.
- */
+angular.module('myAPp').controller('calendarCtrl', ['$scope','ui.rCalendar', function ($scope) {
+    'use strict';
+    $scope.changeMode = function (mode) {
+        $scope.mode = mode;
+    };
 
-angular.module('mwl.calendar.docs', ['mwl.calendar', 'ngAnimate', 'ui.bootstrap', 'colorpicker.module']);
-angular
-    .module('mwl.calendar.docs') //you will need to declare your module with the dependencies ['mwl.calendar', 'ui.bootstrap', 'ngAnimate']
-    .controller('KitchenSinkCtrl', function(moment, alert, calendarConfig) {
+    $scope.today = function () {
+        $scope.currentDate = new Date();
+    };
 
-        var vm = this;
+    $scope.isToday = function () {
+        var today = new Date(),
+            currentCalendarDate = new Date($scope.currentDate);
 
-        //These variables MUST be set as a minimum for the calendar to work
-        vm.calendarView = 'month';
-        vm.viewDate = new Date();
-        var actions = [{
-            label: '<i class=\'glyphicon glyphicon-pencil\'></i>',
-            onClick: function(args) {
-                alert.show('Edited', args.calendarEvent);
-            }
-        }, {
-            label: '<i class=\'glyphicon glyphicon-remove\'></i>',
-            onClick: function(args) {
-                alert.show('Deleted', args.calendarEvent);
-            }
-        }];
-        vm.events = [
-            {
-                title: 'An event',
-                color: calendarConfig.colorTypes.warning,
-                startsAt: moment().startOf('week').subtract(2, 'days').add(8, 'hours').toDate(),
-                endsAt: moment().startOf('week').add(1, 'week').add(9, 'hours').toDate(),
-                draggable: true,
-                resizable: true,
-                actions: actions
-            }, {
-                title: '<i class="glyphicon glyphicon-asterisk"></i> <span class="text-primary">Another event</span>, with a <i>html</i> title',
-                color: calendarConfig.colorTypes.info,
-                startsAt: moment().subtract(1, 'day').toDate(),
-                endsAt: moment().add(5, 'days').toDate(),
-                draggable: true,
-                resizable: true,
-                actions: actions
-            }, {
-                title: 'This is a really long event title that occurs on every year',
-                color: calendarConfig.colorTypes.important,
-                startsAt: moment().startOf('day').add(7, 'hours').toDate(),
-                endsAt: moment().startOf('day').add(19, 'hours').toDate(),
-                recursOn: 'year',
-                draggable: true,
-                resizable: true,
-                actions: actions
-            }
-        ];
+        today.setHours(0, 0, 0, 0);
+        currentCalendarDate.setHours(0, 0, 0, 0);
+        return today.getTime() === currentCalendarDate.getTime();
+    };
 
-        vm.cellIsOpen = true;
+    $scope.loadEvents = function () {
+        $scope.eventSource = createRandomEvents();
+    };
 
-        vm.addEvent = function() {
-            vm.events.push({
-                title: 'New event',
-                startsAt: moment().startOf('day').toDate(),
-                endsAt: moment().endOf('day').toDate(),
-                color: calendarConfig.colorTypes.important,
-                draggable: true,
-                resizable: true
-            });
-        };
+    $scope.onEventSelected = function (event) {
+        $scope.event = event;
+    };
 
-        vm.eventClicked = function(event) {
-            alert.show('Clicked', event);
-        };
+    $scope.onTimeSelected = function (selectedTime) {
+        console.log('Selected time: ' + selectedTime);
+    };
 
-        vm.eventEdited = function(event) {
-            alert.show('Edited', event);
-        };
-
-        vm.eventDeleted = function(event) {
-            alert.show('Deleted', event);
-        };
-
-        vm.eventTimesChanged = function(event) {
-            alert.show('Dropped or resized', event);
-        };
-
-        vm.toggle = function($event, field, event) {
-            $event.preventDefault();
-            $event.stopPropagation();
-            event[field] = !event[field];
-        };
-
-        vm.timespanClicked = function(date, cell) {
-
-            if (vm.calendarView === 'month') {
-                if ((vm.cellIsOpen && moment(date).startOf('day').isSame(moment(vm.viewDate).startOf('day'))) || cell.events.length === 0 || !cell.inMonth) {
-                    vm.cellIsOpen = false;
-                } else {
-                    vm.cellIsOpen = true;
-                    vm.viewDate = date;
+    function createRandomEvents() {
+        var events = [];
+        for (var i = 0; i < 50; i += 1) {
+            var date = new Date();
+            var eventType = Math.floor(Math.random() * 2);
+            var startDay = Math.floor(Math.random() * 90) - 45;
+            var endDay = Math.floor(Math.random() * 2) + startDay;
+            var startTime;
+            var endTime;
+            if (eventType === 0) {
+                startTime = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate() + startDay));
+                if (endDay === startDay) {
+                    endDay += 1;
                 }
-            } else if (vm.calendarView === 'year') {
-                if ((vm.cellIsOpen && moment(date).startOf('month').isSame(moment(vm.viewDate).startOf('month'))) || cell.events.length === 0) {
-                    vm.cellIsOpen = false;
-                } else {
-                    vm.cellIsOpen = true;
-                    vm.viewDate = date;
-                }
+                endTime = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate() + endDay));
+                events.push({
+                    title: 'All Day - ' + i,
+                    startTime: startTime,
+                    endTime: endTime,
+                    allDay: true
+                });
+            } else {
+                var startMinute = Math.floor(Math.random() * 24 * 60);
+                var endMinute = Math.floor(Math.random() * 180) + startMinute;
+                startTime = new Date(date.getFullYear(), date.getMonth(), date.getDate() + startDay, 0, date.getMinutes() + startMinute);
+                endTime = new Date(date.getFullYear(), date.getMonth(), date.getDate() + endDay, 0, date.getMinutes() + endMinute);
+                events.push({
+                    title: 'Event - ' + i,
+                    startTime: startTime,
+                    endTime: endTime,
+                    allDay: false
+                });
             }
-
-        };
-
-    });
+        }
+        return events;
+    }
+}]);

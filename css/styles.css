@@ -4,7 +4,7 @@
 html,body {
 
     font-family: Helvetica;
-    background: #B1B7B9;
+    background: rgba(216, 209, 199, 1);
     height:100%;
     top:0;
     top:0; left:0;
@@ -30,33 +30,54 @@ html,body {
 
 /*Invalid Text*/
 .text-danger {
-    margin-top: 15px;
     color:red;
     font-size:12px;
-    margin-left: 80px;
+    margin-left:30%;
 }
 
-md-input-container.md-custom,
-md-input-container input{
-    width:304px;
+/*login input box*/
+md-input-container{
+	font-size: 14px;
+  padding:0px;
+  margin: 15px 0;
+	-webkit-appearance: none;
+	display: block;
 }
-/*Brand Logo*/
 
-centre {
+/*forgot*/
+.text-forgot {
+  text-align: center;
+  font-size:12px;
+}
+
+
+/*login Header Logo*/
+  centre {
     position: relative;
-    left: 31%;
-}
+    margin-left:41%;
+  }
+
+  centre img {
+    margin-top: 5%;
+     max-width: 200px;
+   }
 
 @media only screen and (max-width: 800px) {
-    centre {
-        position: relative;
-        left: 19%;
-        transform: translate(-50%, -50%);
-    }
+
+  centre {
+    position: relative;
+    margin-left:38%;
+  }
+  centre img {
+    margin-top: 5%;
+     max-width: 200px;
+   }
 }
 
 /*Login Button*/
 button {
+    margin-top: 0%;
+    margin-left: 28%;
     padding: 8px 40px;
     border-radius: 5px;
     background-color: #384EA4;
@@ -66,12 +87,13 @@ button {
 }
 
 /*forgot password*/
-.forgot a:active,
-.forgot a:focus{
-    text-decoration: none;
+ a:focus,
+ a:active{
+ text-decoration: none;
 }
 
 .forgot {
+
     position: relative;
 
 }
@@ -201,6 +223,10 @@ button {
     }
 }
 
+/********************
+ *  CALENDAR VIEW   *
+ ********************/
+
 
 
 
@@ -252,7 +278,3 @@ button {
 
 /*.progressCirculardemoBasicUsage .visible {*/
     /*border-color: rgba(221, 221, 177, 0); }*/
-
-
-
-
