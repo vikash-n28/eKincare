@@ -1,1 +1,106 @@
+<!--Create Event Button-->
+<div class="row text-right">
+    <a href="" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#basicModal">Create Event</a>
+
+</div>
+
+<!--Model Page-->
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Add an event</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="event_theme_month">Theme month</label>
+                        <select name="event[theme_month]" id="event_theme_month">
+                            <option value=>Select Month</option>
+                            <option value='1'>Janaury</option>
+                            <option value='2'>February</option>
+                            <option value='3'>March</option>
+                            <option value='4'>April</option>
+                            <option value='5'>May</option>
+                            <option value='6'>June</option>
+                            <option value='7'>July</option>
+                            <option value='8'>August</option>
+                            <option value='9'>September</option>
+                            <option value='10'>October</option>
+                            <option value='11'>November</option>
+                            <option value='12'>December</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="event_theme">Theme</label>
+                            <input type="text" class="form-control" placeholder="Describe your theme" required="required" name="event[theme]" id="event_theme">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="event_date">Date</label>
+                            <sup class="text-danger">*</sup>
+                            <input type="text" class="form-control" placeholder="DD/MM/YYYY" required="required" name="event[date]" id="event_date">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="event_name">Name</label>
+                            <sup class="text-danger">*</sup>
+                            <input type="text" placeholder="Event Name" required="required" name="event[name]" id="event_name">
+                        </div>
+                    </div>
+                </div>
+
+                div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="event_start_time">Start time</label>
+                        <sup class="text-danger">*</sup>
+                        <input type="text" class="form-control" placeholder="HH:MM" required="required" name="event[start_time]" id="event_start_time">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="event_name">Name</label>
+                        <sup class="text-danger">*</sup>
+                        <input type="text" placeholder="Event Name" required="required" name="event[name]" id="event_name">
+                    </div>
+                </div>
+
+                <!--<div class="S_month">Theme Month-->
+                <!--<select id='gMonth1'>-->
+                    <!--<option selected value=''>&#45;&#45;Select Month&#45;&#45;</option>-->
+                    <!--<option value='1'>Janaury</option>-->
+                    <!--<option value='2'>February</option>-->
+                    <!--<option value='3'>March</option>-->
+                    <!--<option value='4'>April</option>-->
+                    <!--<option value='5'>May</option>-->
+                    <!--<option value='6'>June</option>-->
+                    <!--<option value='7'>July</option>-->
+                    <!--<option value='8'>August</option>-->
+                    <!--<option value='9'>September</option>-->
+                    <!--<option value='10'>October</option>-->
+                    <!--<option value='11'>November</option>-->
+                    <!--<option value='12'>December</option>-->
+                <!--</select>-->
+                <!--</div>-->
+
+                <!--<div>Theme<input type="text" id="theme" /></div>-->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 <calendar selected="day"></calendar>
