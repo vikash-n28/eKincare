@@ -1,10 +1,3 @@
-.nav-left {
-    text-align: left;
-}
-
-.nav-right {
-    text-align: right;
-}
 
 .scrollable {
     width: 100%;
@@ -168,12 +161,3 @@
         font-size: 12px;
     }
 }
-
-/****************
- *   Forgot     *
- ****************/
-
-.container .panel-body {
-    margin-top: 10%;
-}
-

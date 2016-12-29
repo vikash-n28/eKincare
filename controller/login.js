@@ -1,5 +1,5 @@
 angular.module('myAPp')
-    .controller('loginCtrl', function($scope, $location, $auth,$state) {
+    .controller('loginCtrl', function($scope, $location, $auth) {
         // var config = {method: 'POST',url: 'https://staging.ekincare.com/v1/core/login'};
         $scope.login = function() {
             var user = {

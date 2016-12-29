@@ -1,4 +1,4 @@
-var app = angular.module('myAPp',['ui.router','ngMaterial','ngAnimate','ngAria','ngMessages','satellizer','ui.rCalendar']);
+var app = angular.module('myAPp',['ui.router','ngMaterial','ngAnimate','ngAria','ngMessages','satellizer']);
 app.config(['$stateProvider','$urlRouterProvider' ,'$httpProvider','$authProvider',function ($stateProvider,$urlRouterProvider ,$httpProvider,$authProvider) {
 
     /**
@@ -44,12 +44,12 @@ app.config(['$stateProvider','$urlRouterProvider' ,'$httpProvider','$authProvide
                 loginRequired: loginRequired
             }
         })
-        .state('calendar', {
+        .state('home.calendar', {
             url: '/calendar',
-            templateUrl:'template/calendar.html',
+            templateUrl:'template/calendar1.html',
             controller:'calendarCtrl',
             resolve: {
-                skipIfLoggedIn: skipIfLoggedIn
+                loginRequired: loginRequired
             }
         })
         .state('login', {

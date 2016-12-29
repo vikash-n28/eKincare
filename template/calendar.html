@@ -1,39 +1,51 @@
-<!--Display calendar-->
-<section class="content" style="margin-top: 100px;">
-    <section class="container">
-        <section ng-controller="CalendarCtrl" ng-init="loadEvents()">
-            <div class="alert alert-success" ng-show="event">Event selected:{{event.startTime|date:
-                'MMM/dd,yyyy,HH:mm'}} - {{event.endTime|date:'MMM/dd,yyyy,HH:mm'}}, {{event.title}}
-            </div>
+<div class="table-container">
+    <table border="1">
 
-            <div class="btn-toolbar">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default" ng-class="{active:mode==='month'}"
-                            ng-click="changeMode('month')">
-                        Month
-                    </button>
-                    <button type="button" class="btn btn-default" ng-class="{active:mode==='week'}"
-                            ng-click="changeMode('week')">
-                        Week
-                    </button>
-                    <button type="button" class="btn btn-default" ng-class="{active:mode==='day'}"
-                            ng-click="changeMode('day')">
-                        Day
-                    </button>
-                </div>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default" ng-disabled="isToday()"
-                            ng-click="today()">
-                        Today
-                    </button>
-                </div>
-            </div>
-            <div class="well well-sm">
-                <calendar ng-model="currentDate" calendar-mode="mode" event-source="eventSource"
-                          range-changed="reloadSource(startTime, endTime)"
-                          event-selected="onEventSelected(event)"
-                          time-selected="onTimeSelected(selectedTime)"></calendar>
-            </div>
-        </section>
-    </section>
-</section>
+        <!--Display month/year-->
+        <tr class="header">
+            <th ng-click="previous()"><<</th>
+            <th colspan="5">{{month.format("MMMM, YYYY")}}</th>
+            <th ng-click="next()">>></th>
+        </tr>
+
+        <tr class="week names">
+            <th class="day">Sun</th>
+            <th class="day">Mon</th>
+            <th class="day">Tue</th>
+            <th class="day">Wed</th>
+            <th class="day">Thu</th>
+            <th class="day">Fri</th>
+            <th class="day">Sat</th>
+        </tr>
+
+        <tr class="week" ng-repeat="week in weeks">
+            <td class="day" ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth, selected: day.date.isSame(selected) }" ng-click="select(day)" ng-repeat="day in week.days">{{day.number}}</td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+
+
+<!--<div class="header">-->
+    <!--<div class="calendar-title">-->
+        <!--<i class="fa fa-angle-centre" ng-click="previous()"></i>-->
+        <!--<span>{{month.format("MMMM, YYYY")}}</span>-->
+        <!--<i class="fa fa-angle-right" ng-click="next()"></i>-->
+    <!--</div>-->
+
+<!--</div>-->
+<!--<div class="week names">-->
+    <!--<span class="day">Sun</span>-->
+    <!--<span class="day">Mon</span>-->
+    <!--<span class="day">Tue</span>-->
+    <!--<span class="day">Wed</span>-->
+    <!--<span class="day">Thu</span>-->
+    <!--<span class="day">Fri</span>-->
+    <!--<span class="day">Sat</span>-->
+<!--</div>-->
+<!--<div class="week" ng-repeat="week in weeks">-->
+    <!--<span class="day" ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth, selected: day.date.isSame(selected) }" ng-click="select(day)" ng-repeat="day in week.days">{{day.number}}</span>-->
+<!--</div>-->

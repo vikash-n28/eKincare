@@ -4,12 +4,13 @@
    <head>
        <!--CDNs Stylesheet link-->
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link  href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
        <link  href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" >
        <link  href="bower_components/angular-material/angular-material.min.css" rel="stylesheet">
        <link  href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
        <link  href="bower_components/ui-rCalendar/dist/css/calendar.min.css" rel="stylesheet">
-       <link  href="css/styles.css" rel="stylesheet" type="text/css">
-       <link  href="css/calendar.css" rel="stylesheet" type="text/css">
+       <link  href="css/font.css" rel="stylesheet" type="text/css">
+       <link  href="css/style.css" rel="stylesheet" type="text/css">
    </head>
    <body>
        <!--<div layout="row" layout-sm="column" layout-align="space-around">-->
@@ -22,12 +23,12 @@
    </body>
 
    <!--CDN Link-->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.4/interact.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.0/ui-bootstrap-tpls.min.js"></script>
     <script src="//cdn.rawgit.com/jkbrzt/rrule/v2.1.0/lib/rrule.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-bootstrap-colorpicker/3.0.25/js/bootstrap-colorpicker-module.min.js"></script>
-    <script src="//mattlewis92.github.io/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js"></script>
+    <script src="//mattlewis92.github.io/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js"></script> -->
 
    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>-->
    <!--<script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.min.js"></script>-->
@@ -58,13 +59,16 @@
    <script src="bower_components/Required_Components/angular-sanitize.min.js"></script>
    <script src="bower_components/jquery/dist/jquery.min.js"></script>
    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-   <script src="bower_components/ui-rCalendar/dist/js/calendar-tpls.js"></script>
+   <script src="bower_components/less/dist/less.min.js"></script>
+   <script src="bower_components/underscore/underscore-min.js"></script>
+   <script src="bower_components/moment/min/moment.min.js"></script>
 
    <!--Application Code-->
    <script src="app.js"></script>
    <script src="controller/navBar.js"></script>
    <script src="controller/login.js"></script>
    <script src="controller/calendar.js"></script>
+   <script src="directives/calendar.js"></script>
    <!--<script src="controller/home.js"></script>-->
    <script src="controller/logout.js"></script>
    <!--<script src="controller/loader.js"></script>-->
