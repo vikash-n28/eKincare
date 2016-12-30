@@ -76,11 +76,6 @@ md-input-container{
 	display: block;
 }
 
-/*forgot*/
-.text-forgot {
-  text-align: center;
-  font-size:12px;
-}
 
 
 
@@ -90,21 +85,37 @@ button {
     margin-left: 28%;
     padding: 8px 40px;
     border-radius: 5px;
-    background-color: #384EA4;
+    background-color: #177bbb;
     border-style: inherit;
     font-size: 20px;
     color:#FFFFFF;
 }
+/*md-input-container-onfocused*/
+md-input-container:not(.md-input-invalid).md-input-focused label {
+    color: #177bbb;
+}
+md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+    border-color:#177bbb;
+}
+
+/*forgot*/
+.text-forgot {
+    text-align: center;
+    font-size:14px;
+}
+
 
 /*forgot password*/
- a:focus,
- a:active{
+.text-forgot a:hover,
+.forgot a:focus,
+.forgot a:active{
  text-decoration: none;
 }
 
 .forgot {
 
     position: relative;
+    color: #384EA4;
 
 }
 
@@ -206,7 +217,6 @@ button {
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus {
     text-decoration: none;
-    text-align: center;
 }
 
 @media(min-width:768px) {
@@ -253,7 +263,7 @@ button {
     table {
 
         width:80% !important;
-        margin-left: 220px;
+        margin-left: 240px;
         border-radius: 4px;
         background-color: #ffffff;
     }
@@ -267,7 +277,9 @@ button {
     }
 
     .btn{
-        margin-left: 300px;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        margin-left: 320px;
     }
 }
 
