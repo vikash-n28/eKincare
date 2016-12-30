@@ -1,5 +1,5 @@
 var app = angular.module('myAPp',['ui.router','ngMaterial','ngAnimate','ngAria','ngMessages','satellizer']);
-app.config(['$stateProvider','$urlRouterProvider' ,'$httpProvider','$authProvider',function ($stateProvider,$urlRouterProvider ,$httpProvider,$authProvider) {
+app.config(['$stateProvider','$urlRouterProvider' ,'$httpProvider','$authProvider', function ($stateProvider,$urlRouterProvider ,$httpProvider,$authProvider) {
 
     /**
      * Helper auth functions
@@ -28,6 +28,7 @@ app.config(['$stateProvider','$urlRouterProvider' ,'$httpProvider','$authProvide
         }
         return deferred.promise;
     }];
+
 
 
     /**

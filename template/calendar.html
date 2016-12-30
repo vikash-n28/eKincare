@@ -1,29 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="table">
+            <table border="1" class="table">
 
-<div class="table-container">
-    <table border="1">
+                <!--Display month/year-->
+                <tr scope="row" >
+                    <th ng-click="previous()"><<</th>
+                    <th colspan="5">{{month.format("MMMM &nbsp&nbsp YYYY")}}</th>
+                    <th ng-click="next()">>></th>
+                </tr>
 
-        <!--Display month/year-->
-        <tr class="header">
-            <th ng-click="previous()"><<</th>
-            <th colspan="5">{{month.format("MMMM &nbsp&nbsp YYYY")}}</th>
-            <th ng-click="next()">>></th>
-        </tr>
+                <tr scope="row">
+                    <th class="day">Sun</th>
+                    <th class="day">Mon</th>
+                    <th class="day">Tue</th>
+                    <th class="day">Wed</th>
+                    <th class="day">Thu</th>
+                    <th class="day">Fri</th>
+                    <th class="day">Sat</th>
+                </tr>
 
-        <tr class="week names">
-            <th class="day">Sun</th>
-            <th class="day">Mon</th>
-            <th class="day">Tue</th>
-            <th class="day">Wed</th>
-            <th class="day">Thu</th>
-            <th class="day">Fri</th>
-            <th class="day">Sat</th>
-        </tr>
-
-        <tr class="week" ng-repeat="week in weeks">
-            <td class="day" ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth, selected: day.date.isSame(selected) }" ng-click="select(day)" ng-repeat="day in week.days">{{day.number}}</td>
-        </tr>
-    </table>
+                <tr ng-repeat="week in weeks" scope="row">
+                    <td class="day" ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth, selected: day.date.isSame(selected) }" ng-click="select(day)" ng-repeat="day in week.days">{{day.number}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>
+
 
 
 

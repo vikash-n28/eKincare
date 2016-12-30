@@ -21,20 +21,23 @@
 </nav>
 
 <!--Side Bar-->
-<div id="wrapper">
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Dashboard</b></a></li>
-            <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Customers</b></a></li>
-            <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Appointments</b></a></li>
-            <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Enterprises</b></a></li>
-            <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Partners</b></a></li>
-            <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Promotions</b></a></li>
-            <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Corporates</b></a></li>
-            <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Staff</b></a></li>
-        </ul>
+<div class="col-sm-12 col-xs-12">
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Dashboard</b></a></li>
+                <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Customers</b></a></li>
+                <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Appointments</b></a></li>
+                <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Enterprises</b></a></li>
+                <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Partners</b></a></li>
+                <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Promotions</b></a></li>
+                <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Corporates</b></a></li>
+                <li ng-if="isAuthenticated()"><a ui-sref="#"><b>Staff</b></a></li>
+            </ul>
+        </div>
     </div>
 </div>
+
 
 <!--home display-->
 <ui-view class="home-display"></ui-view>

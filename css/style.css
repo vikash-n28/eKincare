@@ -1,5 +1,10 @@
-/*Global formate*/
-* { box-sizing:border-box; }
+/********************
+ *  GLOBAL FORMATE  *
+ ********************/
+
+* {
+    box-sizing:border-box;
+}
 
 html,body {
 
@@ -8,6 +13,7 @@ html,body {
     top:0;
     top:0; left:0;
     z-index:-1;
+    font-family: MyriadPro-Light;
     /*webkit-font-smoothing: antialiased;*/
 }
 
@@ -183,6 +189,7 @@ button {
 }
 
 .sidebar-nav li a {
+    padding-left:30px;
     display: block;
     text-decoration: none;
     color: #000;
@@ -190,13 +197,16 @@ button {
 
 .sidebar-nav li a:hover {
     text-decoration: none;
+    padding-left:55px;
+    position:relative;
     background: #b8daef;
-    border-radius: 0px 20px 20px 0px;
+    border-radius: 5px 6px 6px 5px;
 }
 
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus {
     text-decoration: none;
+    text-align: center;
 }
 
 @media(min-width:768px) {
@@ -239,83 +249,89 @@ button {
  *  CALENDAR VIEW   *
  ********************/
 
-table {
+@media screen and (min-width: 768px) {
+    table {
 
+        width:80% !important;
+        margin-left: 220px;
+        border-radius: 4px;
+        background-color: #ffffff;
+    }
 
-    margin-left: 20%;
-    border-radius: 4px;
-    background-color: #ffffff;
+    tr, th {
+        text-align: center;
+    }
+
+    td {
+        padding:3% !important;
+    }
+
+    .btn{
+        margin-left: 300px;
+    }
 }
 
-tr, th {
-    text-align: center;
-    padding:20px;
-}
-
-.btn{
-    margin-right: 5%;
-}
 
 .day {
     padding: 25px 60px 25px 25px;
 }
 
-.responsive-calendar .controls {
-    text-align: center;
-}
-.responsive-calendar .controls a {
-    cursor: pointer;
-}
-.responsive-calendar .controls h4 {
-    display: inline;
-}
-.responsive-calendar .day-headers,
-.responsive-calendar .days {
-    font-size: 0;
-}
-.responsive-calendar .day {
-    display: inline-block;
-    position: relative;
-    font-size: 14px;
-    width: 14.285714285714286%;
-    text-align: center;
-}
-.responsive-calendar .day a {
-    color: #000000;
-    display: block;
-    cursor: pointer;
-    padding: 20% 0 20% 0;
-}
-.responsive-calendar .day a:hover {
-    background-color: #eee;
-    text-decoration: none;
-}
-.responsive-calendar .day.header {
-    border-bottom: 1px gray solid;
-}
-.responsive-calendar .day.active a {
-    background-color: #1d86c8;
-    color: #ffffff;
-}
-.responsive-calendar .day.active a:hover {
-    background-color: #36a0e2;
-}
-.responsive-calendar .day.active .not-current {
-    background-color: #8fcaef;
-    color: #ffffff;
-}
-.responsive-calendar .day.active .not-current:hover {
-    background-color: #bcdff5;
-}
-.responsive-calendar .day.not-current a {
-    color: #ddd;
-}
-.responsive-calendar .day .badge {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    z-index: 1;
-}
+/*.responsive-calendar .controls {*/
+    /*text-align: center;*/
+/*}*/
+/*.responsive-calendar .controls a {*/
+    /*cursor: pointer;*/
+/*}*/
+/*.responsive-calendar .controls h4 {*/
+    /*display: inline;*/
+/*}*/
+/*.responsive-calendar .day-headers,*/
+/*.responsive-calendar .days {*/
+    /*font-size: 0;*/
+/*}*/
+/*.responsive-calendar .day {*/
+    /*display: inline-block;*/
+    /*position: relative;*/
+    /*font-size: 14px;*/
+    /*width: 14.285714285714286%;*/
+    /*text-align: center;*/
+/*}*/
+/*.responsive-calendar .day a {*/
+    /*color: #000000;*/
+    /*display: block;*/
+    /*cursor: pointer;*/
+    /*padding: 20% 0 20% 0;*/
+/*}*/
+/*.responsive-calendar .day a:hover {*/
+    /*background-color: #eee;*/
+    /*text-decoration: none;*/
+/*}*/
+/*.responsive-calendar .day.header {*/
+    /*border-bottom: 1px gray solid;*/
+/*}*/
+/*.responsive-calendar .day.active a {*/
+    /*background-color: #1d86c8;*/
+    /*color: #ffffff;*/
+/*}*/
+/*.responsive-calendar .day.active a:hover {*/
+    /*background-color: #36a0e2;*/
+/*}*/
+/*.responsive-calendar .day.active .not-current {*/
+    /*background-color: #8fcaef;*/
+    /*color: #ffffff;*/
+/*}*/
+/*.responsive-calendar .day.active .not-current:hover {*/
+    /*background-color: #bcdff5;*/
+/*}*/
+/*.responsive-calendar .day.not-current a {*/
+    /*color: #ddd;*/
+/*}*/
+/*.responsive-calendar .day .badge {*/
+    /*position: absolute;*/
+    /*top: 2px;*/
+    /*right: 2px;*/
+    /*z-index: 1;*/
+/*}*/
 
 
 

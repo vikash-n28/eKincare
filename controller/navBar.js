@@ -7,12 +7,3 @@ angular.module('myAPp')
             return $auth.isAuthenticated();
         };
     });
-
-// (function() {
-//     'use strict';
-//     angular.module(, ['ngMaterial'])
-//         .controller('AppCtrl', AppCtrl);
-//     function AppCtrl($scope) {
-//         $scope.currentNavItem = 'page1';
-//     }
-// })();
